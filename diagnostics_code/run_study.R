@@ -10,9 +10,16 @@ logMessage("LOG CREATED")
 # run ----
 result <- list()
 source(here("cohorts","instantiate_cohorts.R"))
-diagnostics <- phenotypeDiagnostics(cdm$study_cohort)
+info(logger, "- Running PhenotypeDiagnostics")
+diagnostics <- phenotypeDiagnostics(cdm$study_cohorts,
+                                    survival = FALSE,
+                                    cohortSample = 20000,
+                                    matchedSample = NULL,
+                                    populationSample = NULL)
 
 exportSummarisedResult(diagnostics,
                        minCellCount = minCellCount,
                        fileName = "phenotyper_results_{cdm_name}_{date}.csv",
                        path = resultsFolder)
+
+logMessage("Finished")
