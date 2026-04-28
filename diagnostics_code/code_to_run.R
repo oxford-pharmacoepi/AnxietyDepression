@@ -23,7 +23,7 @@ library(purrr)
 
 # database metadata and connection details
 # The name/ acronym for the database
-dbName <- "CPRD GOLD"
+dbName <- "..."
 
 # Database connection details
 # In this study we also use the DBI package to connect to the database
@@ -41,24 +41,19 @@ dbName <- "CPRD GOLD"
 #   password = password
 # )
 
-db <- DBI::dbConnect(RPostgres::Postgres(), 
-                     dbname = "cdm_gold_202507",
-                     port = Sys.getenv("DB_PORT"),
-                     host = Sys.getenv("DB_HOST"),
-                     user = Sys.getenv("DB_USER"),
-                     password = Sys.getenv("DB_PASSWORD"))
+db <- DBI::dbConnect("...")
 
 # The name of the schema that contains the OMOP CDM with patient-level data
-cdmSchema <- "public_100k"
+cdmSchema <- "..."
 
 # A prefix for all permanent tables in the database
-writePrefix <- "aphrc"
+writePrefix <- "..."
 
 # The name of the schema where results tables will be created
-writeSchema <- "results"
+writeSchema <- "..."
 
 # The name of the schema where the achilles tables are
-achillesSchema <- "results"
+achillesSchema <- "..."
 
 # minimum counts that can be displayed according to data governance
 minCellCount <- 5
@@ -73,12 +68,8 @@ cdm <- cdmFromCon(
   achillesSchema = achillesSchema
 )
 
-summary (cdm)
-
 #to check the CDM version
 omopgenerics::cdmVersion(cdm) #5.4
 
 # Run study ----
 source(here("run_study.R"))
-
-
