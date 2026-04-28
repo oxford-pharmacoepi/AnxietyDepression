@@ -1,5 +1,4 @@
 
-
 ## Instructions to run
 
 ### Run diagnostics
@@ -17,5 +16,11 @@
 3.  Open the `global.R` script in the `shiny` folder.
 4.  Click the *Run App* button in RStudio to launch the local Shiny app for interactive exploration of the results.
 
+This repository contains the code to run the phenotype diagnostics for anxiety and depression. It contains two subfolders:
+
+diagnostics_code for the code to run to analyse the cohorts of interest
+
+diagnostics_shiny with the correspondent shiny app to view the output
 
 
+NOTE: At this stage, we have only written code for the diagnostics, so the folders related to the study code and study shiny are empty.
