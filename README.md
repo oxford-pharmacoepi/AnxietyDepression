@@ -1,4 +1,4 @@
-# Diagnostics
+# AnxietyDepression APHRC
 
 This repository contains the code to run the phenotype diagnostics for anxiety and depression. It contains two subfolders:
 
