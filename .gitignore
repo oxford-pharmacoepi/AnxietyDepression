@@ -3,3 +3,5 @@
 .RData
 .Ruserdata
 diagnostics_code/results/*.csv
+diagnostics_code/code_to_run_local.R
+diagnostics_shiny/data/raw/*.csv
