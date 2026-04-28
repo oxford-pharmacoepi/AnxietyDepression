@@ -1,21 +1,17 @@
-# Diagnostics code
+## Instructions to run
 
-Introduction
-This repository contains the code to run the phenotype diagnostics of anxiety and depression.
+### Run diagnostics
 
-Running the analysis
-You should have downloaded the entire study repository (you can download as a zip folder using Code -> Download ZIP, or you can use GitHub Desktop).
+1.  Open the **diagnostics_code** folder.
+2.  Make sure to open the **diagnostics_code.Rproj** project in RStudio.
+4.  Restore packages from `renv.lock` with `renv::restore()`.
+5.  Open code_to_run.R, fill in the required fields to connect to your database and create a cdm reference and the run `source(here("run_study.R"))`.
+6.  When finished, a results .csv file will be created in the **results** folder. This .csv file only contains aggregated data with results and can be shared.
 
-Open the project diagnostics_code.Rproj in RStudio (when inside the project, you will see its name on the top-right of your RStudio session).
+### Review diagnostics in a Shiny app
 
-Load all the necessary libraries using renv.
+1.  Navigate to the `diagnostics_shiny` folder and open the project file `PhenotypeRShiny.Rproj` in RStudio. You should see the project name in the top-right corner of your RStudio session.
+2.  Copy the result files (in .csv format) into the `data/raw` folder located within the `diagnostics_shiny` folder.
+3.  Open the `global.R` script in the `shiny` folder.
+4.  Click the *Run App* button in RStudio to launch the local Shiny app for interactive exploration of the results.
 
-renv::activate()
-
-renv::restore()
-
-Open the code_to_run.R file, which should be the only file that you need to interact with. Run the lines in the file, adding your database specific information and so on. The last line of this file will run the study: source(here("run_study.R").
-
-After running you should then have results to share in your Results folder.
-
-You can additionally check your results with the inbuilt shiny app. In the main study repository there is a folder called diangostics_shiny. Copy the resulting csv file in your results folder inside the data/raw folder in that shiny sub-repository and launch it to peruse the results. If you update the csv at any point you will have to delete the .RData/.qs file and relaunch the app for the changes to take effect.
