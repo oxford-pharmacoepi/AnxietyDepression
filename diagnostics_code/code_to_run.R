@@ -1,7 +1,8 @@
+#usethis::edit_r_environ() #Open your .Renviron file
 
 # Run lines below to use renv
-# renv::activate()
-# renv::restore()
+#renv::activate()
+#renv::restore()
 
 library(CDMConnector)
 library(DBI)
@@ -22,7 +23,7 @@ library(purrr)
 
 # database metadata and connection details
 # The name/ acronym for the database
-dbName <- ""
+dbName <- "..."
 
 # Database connection details
 # In this study we also use the DBI package to connect to the database
@@ -39,19 +40,20 @@ dbName <- ""
 #   user = user,
 #   password = password
 # )
-db <- dbConnect()
+
+db <- DBI::dbConnect("...")
 
 # The name of the schema that contains the OMOP CDM with patient-level data
-cdmSchema <- ""
+cdmSchema <- "..."
 
 # A prefix for all permanent tables in the database
-writePrefix <- ""
+writePrefix <- "..."
 
 # The name of the schema where results tables will be created
-writeSchema <- ""
+writeSchema <- "..."
 
 # The name of the schema where the achilles tables are
-achillesSchema <- ""
+achillesSchema <- "..."
 
 # minimum counts that can be displayed according to data governance
 minCellCount <- 5
@@ -66,7 +68,8 @@ cdm <- cdmFromCon(
   achillesSchema = achillesSchema
 )
 
+#to check the CDM version
+omopgenerics::cdmVersion(cdm) #5.4
+
 # Run study ----
 source(here("run_study.R"))
-
-

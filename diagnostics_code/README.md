@@ -19,4 +19,3 @@ Open the code_to_run.R file, which should be the only file that you need to inte
 After running you should then have results to share in your Results folder.
 
 You can additionally check your results with the inbuilt shiny app. In the main study repository there is a folder called diangostics_shiny. Copy the resulting csv file in your results folder inside the data/raw folder in that shiny sub-repository and launch it to peruse the results. If you update the csv at any point you will have to delete the .RData/.qs file and relaunch the app for the changes to take effect.
-
