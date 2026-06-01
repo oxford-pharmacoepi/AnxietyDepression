@@ -5,7 +5,7 @@
 1.  Open the **diagnostics_code** folder.
 2.  Make sure to open the **diagnostics_code.Rproj** project in RStudio.
 4.  Restore packages from `renv.lock` with `renv::restore()`.
-5.  Open code_to_run.R, fill in the required fields to connect to your database and create a cdm reference and the run `source(here("run_study.R"))`.
+5.  Open code_to_run.R, fill in the required fields to connect to your database and create a cdm reference and the run `source(here("code_to_run.R"))`.
 6.  When finished, a results .csv file will be created in the **results** folder. This .csv file only contains aggregated data with results and can be shared.
 
 ### Review diagnostics in a Shiny app
